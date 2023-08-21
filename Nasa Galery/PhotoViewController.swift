@@ -14,29 +14,29 @@ class PhotoViewController: UIViewController {
         Photo(name: "Romero", date: Date(), imageUrl: "bcder", details: "Uma pessoa")
     ]
 
-//    private let tableview: UITableView = {
-//        let table = UITableView()
-//        table.translatesAutoresizingMaskIntoConstraints = false
-//        table.separatorStyle = .none
-//
-//        return table
-//    }()
-    
-    private let navItem: UINavigationItem = {
-        let navItem = UINavigationItem()
+    private let tableview: UITableView = {
+        let table = UITableView()
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.separatorStyle = .none
 
-        navItem.title = "Nasa Galery"
-        navItem.prompt = "Welcome to"
-         return navItem
+        return table
     }()
     
-    private let navigationBar: UINavigationBar = {
-        let navigationBar = UINavigationBar()
-        navigationBar.translatesAutoresizingMaskIntoConstraints = false
-        navigationBar.isTranslucent = true
-        
-        return navigationBar
-    }()
+//    private let navItem: UINavigationItem = {
+//        let navItem = UINavigationItem()
+//
+//        navItem.title = "Nasa Galery"
+//        navItem.prompt = "Welcome to"
+//         return navItem
+//    }()
+//
+//    private let navigationBar: UINavigationBar = {
+//        let navigationBar = UINavigationBar()
+//        navigationBar.translatesAutoresizingMaskIntoConstraints = false
+//        navigationBar.isTranslucent = true
+//
+//        return navigationBar
+//    }()
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -45,33 +45,40 @@ class PhotoViewController: UIViewController {
     
     func setupView() {
         view.backgroundColor = .white
+        tableview.dataSource = self
+        
         addViewsInHierarchy()
         setupConstraints()
     }
     
     func addViewsInHierarchy() {
-        view.addSubview(navigationBar)
-        navigationBar.pushItem(navItem, animated: true)
-
-//        view.addSubview(titleLabel)
-//        view.addSubview(tableview)
+//        view.addSubview(navigationBar)
+        view.addSubview(tableview)
         
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            navigationBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -40),
-            navigationBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-
-            navigationBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            tableview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            tableview.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15),
+            tableview.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableview.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
-//        NSLayoutConstraint.activate([
-//                    titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-//                    titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-//                    titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
-//                ])
 
         }
         
         
+}
+
+
+extension PhotoViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        photos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return PhotoViewCell.setup(photo: photos[indexPath.row])
+    }
+    
+    
 }
