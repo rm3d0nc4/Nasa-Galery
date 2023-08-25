@@ -58,14 +58,14 @@
 		820D25452A7C7C8500CA7C70 /* Nasa Galery */ = {
 			isa = PBXGroup;
 			children = (
+				CECE557B2A991F86006EEE37 /* Details */,
+				CECE55792A991829006EEE37 /* Home */,
 				82E38D7B2A85A5F9009A0174 /* Model */,
-				CEE6DF192A816565009A8EB4 /* PhotoViewController.swift */,
 				820D25462A7C7C8500CA7C70 /* AppDelegate.swift */,
 				820D25482A7C7C8500CA7C70 /* SceneDelegate.swift */,
 				820D254F2A7C7C8700CA7C70 /* Assets.xcassets */,
 				820D25512A7C7C8700CA7C70 /* LaunchScreen.storyboard */,
 				820D25542A7C7C8700CA7C70 /* Info.plist */,
-				8216BFAD2A8E667800A86594 /* PhotoCell.swift */,
 			);
 			path = "Nasa Galery";
 			sourceTree = "<group>";
@@ -76,6 +76,22 @@
 				82E38D7C2A85A614009A0174 /* Photo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CECE55792A991829006EEE37 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CEE6DF192A816565009A8EB4 /* PhotoViewController.swift */,
+				8216BFAD2A8E667800A86594 /* PhotoCell.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		CECE557B2A991F86006EEE37 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -9,7 +9,7 @@ import Foundation
 
 struct Photo {
     let name: String
-    let date: Date
+    let date: String
     let imageUrl: String
     let details: String
 }

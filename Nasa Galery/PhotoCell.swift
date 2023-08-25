@@ -9,103 +9,96 @@ import Foundation
 import UIKit
 
 class PhotoViewCell: UITableViewCell {
-        
+    
     private let photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .red
-        imageView.layer.cornerRadius = 24
+        imageView.layer.cornerRadius = 16
         imageView.layer.masksToBounds = true
+        imageView.backgroundColor = .blue
         return imageView
     }()
     
-    private let titleLabel: UILabel = {
-        let title = UILabel()
-        title.translatesAutoresizingMaskIntoConstraints = false
-        title.font = .systemFont(ofSize: 17, weight: .medium)
-        title.textColor = .black
-        title.numberOfLines = 0
-        return title
+    private let horizontakStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.spacing = 16
+        return stack
     }()
-    
-    private let detailLabel: UILabel = {
-        let detail = UILabel()
-        detail.translatesAutoresizingMaskIntoConstraints = false
-        detail.font = .systemFont(ofSize: 12, weight: .regular)
-        detail.textColor = .gray
-        return detail
-    }()
-    
-    
-    private let horizontalStack: UIStackView = {
-        let hStack = UIStackView()
-        hStack.translatesAutoresizingMaskIntoConstraints = false
-        hStack.axis = .horizontal
-        hStack.spacing = 20
-        return hStack
-    }()
-    
     
     private let verticalStack: UIStackView = {
-        let vStack = UIStackView()
-        vStack.axis = .vertical
-        vStack.spacing = 5
-        vStack.distribution = .equalCentering
-        return vStack
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 8
+        stack.distribution = .equalCentering
+        return stack
     }()
-
     
-    @available(*, unavailable)
-        required init?(coder: NSCoder) {
-            nil
-        }
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.textColor = .black
+        label.numberOfLines = 0
+        return label
+    }()
     
+    private let releaseDateLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .darkGray
+        label.numberOfLines = 0
+        return label
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupVIew()
+        
+        setupView()
         addViewsInHierarchy()
         setupConstraints()
     }
     
-    static func setup(photo: Photo) -> PhotoViewCell {
-        let photoCell = PhotoViewCell()
-        
-        photoCell.titleLabel.text = photo.name
-        photoCell.detailLabel.text = photo.details
-        // Fazer download da imagem
-        
-        return photoCell
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        nil
     }
     
-    func setupVIew() {
+    public func setup(photo: Photo) {
+        titleLabel.text = photo.name
+        releaseDateLabel.text = "Data: \(photo.date)"
+    }
+    
+    private func setupView() {
         selectionStyle = .none
+        self.contentView.layer.borderWidth = 0.5
+        self.contentView.layer.borderColor = UIColor.gray.cgColor
     }
     
-    func addViewsInHierarchy() {
-        contentView.addSubview(horizontalStack)
-        horizontalStack.addArrangedSubview(imageView!)
-        horizontalStack.addArrangedSubview(verticalStack)
+    private func addViewsInHierarchy() {
+        contentView.addSubview(horizontakStack)
+        horizontakStack.addArrangedSubview(photoImageView)
+        horizontakStack.addArrangedSubview(verticalStack)
+        verticalStack.addArrangedSubview(UIView())
         verticalStack.addArrangedSubview(titleLabel)
-        verticalStack.addArrangedSubview(detailLabel)
+        verticalStack.addArrangedSubview(releaseDateLabel)
+        verticalStack.addArrangedSubview(UIView())
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
-            horizontalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            horizontalStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            horizontalStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-            horizontalStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
-
+            horizontakStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            horizontakStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            horizontakStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            horizontakStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
         ])
         
         NSLayoutConstraint.activate([
-            imageView!.heightAnchor.constraint(equalToConstant: 60),
-            imageView!.widthAnchor.constraint(equalToConstant: 60)
+            photoImageView.widthAnchor.constraint(equalToConstant: 90),
+            photoImageView.heightAnchor.constraint(equalToConstant: 90)
         ])
     }
-    
-    
+
     
 }
 
