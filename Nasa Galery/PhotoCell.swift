@@ -70,9 +70,18 @@ class PhotoViewCell: UITableViewCell {
     }
     
     private func setupView() {
-        selectionStyle = .none
-        self.contentView.layer.borderWidth = 0.5
-        self.contentView.layer.borderColor = UIColor.gray.cgColor
+        self.backgroundColor = UIColor.clear
+        self.contentView.backgroundColor = UIColor.white
+        //Gerar cards
+        self.contentView.layer.cornerRadius = 10
+        self.contentView.layer.masksToBounds = true
+        self.contentView.layer.borderWidth = 1
+        self.contentView.layer.borderColor = UIColor.lightGray.cgColor
+        self.contentView.layer.shadowColor = UIColor.black.cgColor
+        self.contentView.layer.shadowOpacity = 0.5
+        self.contentView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.contentView.layer.shadowRadius = 4
+        
     }
     
     private func addViewsInHierarchy() {
