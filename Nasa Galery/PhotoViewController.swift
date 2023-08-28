@@ -9,12 +9,14 @@ import UIKit
 
 class PhotoViewController: UIViewController {
     
-    private let photos: [Photo] = [
-        .init(name: "Sonda Alpha", date: "13 de Fevereiro de 2023", imageUrl: "", details: ""),
-        .init(name: "Sonda Beta", date: "26 de Março de 2023", imageUrl: "", details: ""),
-        .init(name: "Sonda Gamma", date: "12 de Junho de 2023", imageUrl: "", details: ""),
-        .init(name: "Sonda Delta", date: "22 de Junho de 2023", imageUrl: "", details: "")
-    ]
+//    private let photos: [Photo] = [
+//        .init(title: "Sonda Alpha", date: "13 de Fevereiro de 2023", url: "", explanation: ""),
+//        .init(title: "Sonda Beta", date: "26 de Março de 2023", url: "", explanation: ""),
+//        .init(title: "Sonda Gamma", date: "12 de Junho de 2023", url: "", explanation: ""),
+//        .init(title: "Sonda Delta", date: "22 de Junho de 2023", url: "", explanation: "")
+//    ]
+    
+    private var photos: [Photo] = []
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -38,6 +40,7 @@ class PhotoViewController: UIViewController {
         tableView.delegate = self
         addViewsInHierarchy()
         setupConstraints()
+        fetchNasaPhotos()
         
     }
     
@@ -55,6 +58,25 @@ class PhotoViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 20)
         ])
+    }
+    
+    private func fetchNasaPhotos() {
+        let url = URL(string: "https://api.nasa.gov/planetary/apod?api_key=hwysEVog18DGSczBaNB8XbHKfHTHuzgCxogtBBGe&start_date=2023-08-20")!
+        let request = URLRequest(url: url)
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            data, _, error in if error != nil {print("error1");return}
+            guard let data else {print("error2");return}
+            guard let remotePhotos = try? decoder.decode([Photo].self, from: data) else {print("error3");return}
+            self.photos = remotePhotos;
+            print(remotePhotos)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        task.resume()
     }
     
 }

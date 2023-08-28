@@ -65,8 +65,9 @@ class PhotoViewCell: UITableViewCell {
     }
     
     public func setup(photo: Photo) {
-        titleLabel.text = photo.name
+        titleLabel.text = photo.title
         releaseDateLabel.text = "Data: \(photo.date)"
+        photoImageView.download(from: photo.url)
     }
     
     private func setupView() {

@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Photo {
-    let name: String
+struct Photo: Decodable {
+    let title: String
     let date: String
-    let imageUrl: String
-    let details: String
+    let url: String
+    let explanation: String
 }
