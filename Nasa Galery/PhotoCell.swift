@@ -15,7 +15,7 @@ class PhotoViewCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 16
         imageView.layer.masksToBounds = true
-        imageView.backgroundColor = .blue
+        imageView.backgroundColor = .systemGray4
         return imageView
     }()
     
@@ -74,6 +74,7 @@ class PhotoViewCell: UITableViewCell {
         self.backgroundColor = UIColor.clear
         self.contentView.backgroundColor = UIColor.white
         //Gerar cards
+        /*
         self.contentView.layer.cornerRadius = 10
         self.contentView.layer.masksToBounds = true
         self.contentView.layer.borderWidth = 1
@@ -82,6 +83,7 @@ class PhotoViewCell: UITableViewCell {
         self.contentView.layer.shadowOpacity = 0.5
         self.contentView.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.contentView.layer.shadowRadius = 4
+         */
         
     }
     

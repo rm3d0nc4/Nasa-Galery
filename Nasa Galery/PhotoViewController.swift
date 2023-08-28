@@ -97,9 +97,11 @@ extension PhotoViewController: UITableViewDataSource {
 
 extension PhotoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        
+        let photo = photos[indexPath.row]
         let storyboard = UIStoryboard(name: "Detail", bundle: Bundle(for: DetailViewController.self))
-        let detailViewController = storyboard.instantiateViewController(withIdentifier: "Detail")
+        let detailViewController = storyboard.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
+        detailViewController.photo = photo
         navigationController?.pushViewController(detailViewController, animated: true)
+        
     }
 }

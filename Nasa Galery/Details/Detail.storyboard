@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,26 +18,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IcL-qo-Ya6">
-                                <rect key="frame" x="44" y="144" width="305" height="305.33333333333337"/>
+                                <rect key="frame" x="44" y="151.66666666666663" width="305" height="305"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="305" id="5q0-hk-Cmc"/>
-                                    <constraint firstAttribute="height" constant="212" id="sid-zf-mCP"/>
+                                    <constraint firstAttribute="height" constant="305" id="azf-CA-sow"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEO-CY-vjw">
-                                <rect key="frame" x="32" y="486" width="329" height="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Data de captura: 00/00/0000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEO-CY-vjw">
+                                <rect key="frame" x="32" y="488.66666666666663" width="329" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbV-fr-JeI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lorem Ipsum" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbV-fr-JeI">
                                 <rect key="frame" x="32" y="91" width="329" height="28.666666666666671"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfY-Yb-3jF">
-                                <rect key="frame" x="32" y="532" width="329" height="198"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lorem Ipsum" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfY-Yb-3jF">
+                                <rect key="frame" x="44" y="550.33333333333337" width="305" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.49248576160000002" green="0.48241382840000002" blue="0.48222118619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -45,17 +46,32 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rfY-Yb-3jF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="01M-Qm-y1i"/>
                             <constraint firstItem="cEO-CY-vjw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="7NB-qE-JVR"/>
                             <constraint firstItem="ZbV-fr-JeI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="7pk-Zn-Pn6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rfY-Yb-3jF" secondAttribute="bottom" constant="24" id="8C7-DG-Qff"/>
                             <constraint firstItem="ZbV-fr-JeI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="9MF-Mo-8Jj"/>
-                            <constraint firstItem="cEO-CY-vjw" firstAttribute="top" secondItem="IcL-qo-Ya6" secondAttribute="bottom" constant="16" id="F2N-Uk-lmc"/>
+                            <constraint firstItem="IcL-qo-Ya6" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="AW8-pN-aus"/>
+                            <constraint firstItem="IcL-qo-Ya6" firstAttribute="top" secondItem="ZbV-fr-JeI" secondAttribute="bottom" constant="32" id="Bzk-fS-yiE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rfY-Yb-3jF" secondAttribute="trailing" constant="44" id="DBs-LQ-9Cv"/>
+                            <constraint firstItem="cEO-CY-vjw" firstAttribute="top" secondItem="IcL-qo-Ya6" secondAttribute="bottom" constant="32" id="Foq-f4-zxs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rfY-Yb-3jF" secondAttribute="trailing" constant="44" id="JIf-7H-FKe"/>
+                            <constraint firstItem="rfY-Yb-3jF" firstAttribute="top" secondItem="cEO-CY-vjw" secondAttribute="bottom" constant="40" id="LDO-Kd-0ai"/>
+                            <constraint firstItem="IcL-qo-Ya6" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="MQt-f5-CTy"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZbV-fr-JeI" secondAttribute="trailing" constant="32" id="QIx-JX-U9H"/>
+                            <constraint firstItem="IcL-qo-Ya6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="44" id="g2D-5G-ajF"/>
                             <constraint firstItem="IcL-qo-Ya6" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="ln8-rA-Sp9"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rfY-Yb-3jF" secondAttribute="trailing" constant="32" id="owU-cN-abI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cEO-CY-vjw" secondAttribute="trailing" constant="32" id="rWb-ha-VyG"/>
+                            <constraint firstItem="cEO-CY-vjw" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="w5s-V2-zml"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IcL-qo-Ya6" secondAttribute="trailing" constant="44" id="ydq-Ii-AlE"/>
+                            <constraint firstItem="rfY-Yb-3jF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="44" id="ylx-Dh-PLp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="photoDate" destination="cEO-CY-vjw" id="RDq-di-vse"/>
+                        <outlet property="photoDescription" destination="rfY-Yb-3jF" id="Cob-xH-TEu"/>
+                        <outlet property="photoImageView" destination="IcL-qo-Ya6" id="3AF-9b-uGE"/>
+                        <outlet property="photoTitle" destination="ZbV-fr-JeI" id="na3-H0-XmS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,6 +81,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
