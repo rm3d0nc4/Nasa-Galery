@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -55,13 +55,13 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rfY-Yb-3jF" secondAttribute="trailing" constant="44" id="DBs-LQ-9Cv"/>
                             <constraint firstItem="cEO-CY-vjw" firstAttribute="top" secondItem="IcL-qo-Ya6" secondAttribute="bottom" constant="32" id="Foq-f4-zxs"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rfY-Yb-3jF" secondAttribute="trailing" constant="44" id="JIf-7H-FKe"/>
-                            <constraint firstItem="rfY-Yb-3jF" firstAttribute="top" secondItem="cEO-CY-vjw" secondAttribute="bottom" constant="40" id="LDO-Kd-0ai"/>
                             <constraint firstItem="IcL-qo-Ya6" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="MQt-f5-CTy"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZbV-fr-JeI" secondAttribute="trailing" constant="32" id="QIx-JX-U9H"/>
                             <constraint firstItem="IcL-qo-Ya6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="44" id="g2D-5G-ajF"/>
                             <constraint firstItem="IcL-qo-Ya6" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="ln8-rA-Sp9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cEO-CY-vjw" secondAttribute="trailing" constant="32" id="rWb-ha-VyG"/>
                             <constraint firstItem="cEO-CY-vjw" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="w5s-V2-zml"/>
+                            <constraint firstItem="rfY-Yb-3jF" firstAttribute="top" secondItem="cEO-CY-vjw" secondAttribute="bottom" constant="25" id="wKv-QB-VAc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IcL-qo-Ya6" secondAttribute="trailing" constant="44" id="ydq-Ii-AlE"/>
                             <constraint firstItem="rfY-Yb-3jF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="44" id="ylx-Dh-PLp"/>
                         </constraints>

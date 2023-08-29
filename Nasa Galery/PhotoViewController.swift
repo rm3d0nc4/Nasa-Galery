@@ -60,6 +60,13 @@ class PhotoViewController: UIViewController {
         ])
     }
     
+    private func dateFormat(photo: Photo) -> Photo {
+            let date = photo.date
+            let newDate = date.split(separator: "-").reversed().joined(separator: "/")
+            
+            return Photo(title: photo.title, date: newDate, url: photo.url, explanation: photo.explanation);
+        }
+    
     private func fetchNasaPhotos() {
         let url = URL(string: "https://api.nasa.gov/planetary/apod?api_key=hwysEVog18DGSczBaNB8XbHKfHTHuzgCxogtBBGe&start_date=2023-08-20")!
         let request = URLRequest(url: url)
@@ -70,7 +77,7 @@ class PhotoViewController: UIViewController {
             data, _, error in if error != nil {print("error1");return}
             guard let data else {print("error2");return}
             guard let remotePhotos = try? decoder.decode([Photo].self, from: data) else {print("error3");return}
-            self.photos = remotePhotos;
+            self.photos = remotePhotos.map(self.dateFormat)
             print(remotePhotos)
             DispatchQueue.main.async {
                 self.tableView.reloadData()

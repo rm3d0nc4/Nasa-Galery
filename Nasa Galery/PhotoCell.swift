@@ -53,11 +53,14 @@ class PhotoViewCell: UITableViewCell {
     
     func buttonGo() -> UIButton {
         let button = UIButton(type: .system)
-        button.setTitle(">", for: .normal)
-        button.frame = CGRect(x: 150, y: 100, width: 25, height: 25)
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 15, weight: .bold)
+        let symbolImage = UIImage(systemName: "chevron.right", withConfiguration: symbolConfiguration)
+        
+        button.tintColor = UIColor.gray
         button.backgroundColor = UIColor.white
         button.setTitleColor(UIColor.gray, for: .normal)
         button.layer.cornerRadius = 8.0
+        button.setImage(symbolImage, for: .normal)
         return button
     }
     
@@ -105,6 +108,7 @@ class PhotoViewCell: UITableViewCell {
         verticalStack.addArrangedSubview(titleLabel)
         verticalStack.addArrangedSubview(releaseDateLabel)
         verticalStack.addArrangedSubview(UIView())
+        horizontakStack.addArrangedSubview(UIView())
         horizontakStack.addArrangedSubview(buttonGo())
         
     }

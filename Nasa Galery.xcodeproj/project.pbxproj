@@ -48,7 +48,6 @@
 		820D253A2A7C7C8500CA7C70 = {
 			isa = PBXGroup;
 			children = (
-				CE40EC3A2A9D62A100A4EB02 /* Launch Screen.storyboard */,
 				820D25452A7C7C8500CA7C70 /* Nasa Galery */,
 				820D25442A7C7C8500CA7C70 /* Products */,
 			);
@@ -71,6 +70,7 @@
 				82E38D7B2A85A5F9009A0174 /* Model */,
 				820D25462A7C7C8500CA7C70 /* AppDelegate.swift */,
 				820D25482A7C7C8500CA7C70 /* SceneDelegate.swift */,
+				CE40EC3A2A9D62A100A4EB02 /* Launch Screen.storyboard */,
 				820D254F2A7C7C8700CA7C70 /* Assets.xcassets */,
 				820D25542A7C7C8700CA7C70 /* Info.plist */,
 			);
