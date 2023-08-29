@@ -51,6 +51,16 @@ class PhotoViewCell: UITableViewCell {
         return label
     }()
     
+    func buttonGo() -> UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle(">", for: .normal)
+        button.frame = CGRect(x: 150, y: 100, width: 25, height: 25)
+        button.backgroundColor = UIColor.white
+        button.setTitleColor(UIColor.gray, for: .normal)
+        button.layer.cornerRadius = 8.0
+        return button
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -95,6 +105,8 @@ class PhotoViewCell: UITableViewCell {
         verticalStack.addArrangedSubview(titleLabel)
         verticalStack.addArrangedSubview(releaseDateLabel)
         verticalStack.addArrangedSubview(UIView())
+        horizontakStack.addArrangedSubview(buttonGo())
+        
     }
     
     private func setupConstraints() {
